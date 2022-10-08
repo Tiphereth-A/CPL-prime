@@ -1,0 +1,16 @@
+\begin{frame}{定理}
+	\only<1->{\begin{theorem}
+			\label{prime:th:inf-prime}
+			素数有无限多个
+		\end{theorem}}
+
+	\only<2->{\begin{proof}
+			假设素数只有有限个, 记作\(a_1,a_2,\dots,a_n\)
+
+			考虑\(N=\prod_{i=1}^np_i+1\), 显然\(N>2\)
+
+			由于\(N\ne p_i,i=1,2,\dots,n\), 故必有\(N\)必有素因子\(p\)
+
+			但\(p_i\nmid N,i=1,2,\dots,n\), 故\(p\)是\(p_1,p_2,\dots,p_n\)以外的素数, 这与假设矛盾
+		\end{proof}}
+\end{frame}

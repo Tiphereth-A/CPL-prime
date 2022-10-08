@@ -1,0 +1,37 @@
+\begin{frame}[fragile]{一道数学题}
+	\label{prime:exp:div-example1}
+
+	设\(n\)是大于 1 的整数, 证明:
+
+	\[
+		\sum_{i=1}^n\frac{1}{i}
+	\]
+
+	不是整数
+\end{frame}
+
+
+\begin{frame}[fragile]{证明}
+	\only<1->{令
+	\[
+		M=2^{\left\lfloor\log_2 n\right\rfloor-1}\left(2\left\lfloor\frac{n-1}{2}\right\rfloor+1\right)!!
+	\]
+	则 \(2^{\left\lfloor\log_2 n\right\rfloor}\nmid M\)}
+
+	\only<2>{若\(\nexists a\in[1,n]/\{2^{\left\lfloor\log_2 n\right\rfloor}\}\subset\Bbb{N}\)使得\(a\mid M\), 则命题得证}
+
+	\only<3-4>{若\(a\)为奇数, 则\(a\mid \left(2\left\lfloor\frac{n-1}{2}\right\rfloor+1\right)!!\), 与假设矛盾}
+
+	\only<4>{若\(a\)为偶数, 则\(\exists s\in\left[0,2^{\left\lfloor\log_2 n\right\rfloor}\right)\subset\Bbb{N},t\in 2\Bbb{N}+1\), 使得\(a=2^st\)
+
+	而\(2^s\mid 2^{\left\lfloor\log_2 n\right\rfloor}, t\mid \left(2\left\lfloor\frac{n-1}{2}\right\rfloor+1\right)!!\)
+
+	故\(a\mid M\), 与假设矛盾}
+
+	\only<5->{因此, \(1\)到\(n\)中有且仅有一个整数不整除\(M\), 即
+
+		\[
+			\sum_{i=1}^n\frac{1}{n}
+		\]
+		不是整数}
+\end{frame}

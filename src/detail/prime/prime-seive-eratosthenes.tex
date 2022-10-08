@@ -1,0 +1,33 @@
+\begin{frame}{Eratosthenes 筛法}
+	\label{prime:algo:prime-seive-eratosthenes}
+
+	\only<1->{显然合数的倍数也是合数, 所以我们可以这样操作:}
+
+	\only<2->{\texttt{2..n}从小到大枚举, 如果当前枚举的数没被标记为合数, 我们就认为这个数是素数, 如果这个数是素数, 我们将其倍数标记为合数}
+\end{frame}
+
+
+\begin{frame}[fragile]{实现}
+	\includecode[c++]{eratosthenes_seive.cpp}
+\end{frame}
+
+
+\begin{frame}{时间复杂度}
+	\only<1->{易知
+
+		\begin{equation}
+			T(n)=\sum_{p\in\{\texttt{prime}\}\cap[2,n]}\left\lfloor\frac{n}{i}\right\rfloor
+		\end{equation}}
+
+	\only<2->{而
+
+		\[
+			\begin{aligned}
+				O(T(n)) & =O\left(\sum_{p\in\{\texttt{prime}\}\cap[2,n]}\left\lfloor\frac{n}{i}\right\rfloor\right) \\
+				        & =O\left(n\sum_{p\in\{\texttt{prime}\}\cap[2,n]}\frac{1}{p}\right)                         \\
+				        & =O(n\log\log n)
+			\end{aligned}
+		\]}
+
+	\only<3->{故时间复杂度为\(O(n\log\log n)\)}
+\end{frame}

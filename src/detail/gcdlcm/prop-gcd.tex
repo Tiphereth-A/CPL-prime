@@ -1,0 +1,43 @@
+\begin{frame}{最大公约数的性质}
+	\label{prime:prop:gcdlcm-gcd}
+
+	\begin{enumerate}
+		\item<1-> \((a,b)=(b,a)=(|a|,b)=(|a|,|b|)\)
+		\item<2-> 当\(a\ne 0\)时, \((a,a)=|a|\)
+		\item<3-> 若\(a_1\ne 0\), 则\((a_1,a_2,\dots,a_n)=((a_{1},a_{2}),a_{3},\dots,a_{n})\)
+		\item<4-> \((a,b)=(a,b+la),~\forall l\in\Bbb{Z}\)
+		\item<5-> \(m(a_1,a_2,\dots,a_n)=(ma_1,ma_2,\dots,ma_n),~\forall m\in\Bbb{N}^*\)
+		\item<6-> 若\((a_1,a_2,\dots,a_n)=d\), 则\((\frac{a_1}{d},\frac{a_2}{d},\dots,\frac{a_n}{d})=1\)
+		\item<7-> 对于整数\(m\), 若\((a_i,m)=1,~i=1,2,\dots,n\), 则\((\prod_{i=1}^na_i,m)=1\)
+		\item<8-> 设\(c\in\Bbb{Z}\setminus\{0\},a,b\in\Bbb{Z}\), 若\(c\mid ab,(c,b)=1\), 则\(c\mid a\)
+			\only<8->{\footnote{特别地, 若\(p\)为素数, \(p\mid ab\), 则\(p\mid a\)或\(p\mid b\)}}
+	\end{enumerate}
+\end{frame}
+
+
+\begin{frame}{B\'{e}zout 定理}
+	\begin{theorem}[B\'{e}zout 定理]
+		\label{prime:th:bezout}
+
+		设\(a_1,a_2,\dots,a_n\)是不全为零的整数, 且 \((a_1,a_2,\dots,a_n)=d\), 则
+
+		\begin{equation}
+			S:=\left\{\sum_{i=1}^na_ix_i:x_i\in\Bbb{Z},i=1,2,\dots,n\right\}=d\Bbb{Z}
+		\end{equation}
+	\end{theorem}
+\end{frame}
+
+
+\begin{frame}{证明}
+	\only<1->{由之前提到的整数集重要性质可知, 存在正整数\(a\)使得\(S=a\Bbb{Z}\), 接下来只需证\(a=d\)}
+
+	\only<2->{一方面, \(d\)是\(S\)中所有数的因子, 而\(a\in S\), 故\(d\mid a\)}
+
+	\only<3->{另一方面, 注意到\(a_1,a_2,\dots,a_n\in S\), 故\(a\)是\(a_1,a_2,\dots,a_n\)的公因子, 即有
+
+		\begin{equation}
+			a\mid(a_1,a_2,\dots,a_n)=d
+		\end{equation}}
+
+	\only<4->{因此\(a=d\)}
+\end{frame}
