@@ -1,0 +1,58 @@
+\begin{frame}[fragile,allowframebreaks]{Hydro H1060 绝世傻逼题}
+	\label{prime:example:hydroh1060}
+
+	\textbf{题目描述}
+
+	给定 \(D,R,E,A,M\) (\(1\le D,R,E,A,M\le5\times10^7\)) 求:
+
+	\begin{equation}
+		\sum_{d=1}^D\sum_{r=1}^R\sum_{e=1}^E\sum_{a=1}^A\sum_{m=1}^M\frac{\begin{matrix}
+				\gcd(d,r,e)\gcd(d,r,a)\gcd(d,r,m) \\
+				\gcd(d,e,a)\gcd(d,e,m)\gcd(d,a,m) \\
+				\gcd(r,e,a)\gcd(r,e,m)\gcd(r,a,m) \\
+				\gcd(e,a,m)
+			\end{matrix}}{\begin{matrix}
+				\gcd(\lcm(d,r),\lcm(d,e),\lcm(d,a),\lcm(d,m),         \\
+				\lcm(r,e),\lcm(r,a),\lcm(r,m),\lcm(e,a),\lcm(e,m),    \\
+				\lcm(a,m))^3\gcd(\lcm(d,r,e),\lcm(d,r,a),\lcm(d,r,m), \\
+				\lcm(d,e,a),\lcm(d,e,m),\lcm(d,a,m),\lcm(r,e,a),      \\
+				\lcm(r,e,m),\lcm(r,a,m),\lcm(e,a,m))
+			\end{matrix}}
+	\end{equation}
+
+	答案对 \(10^9+7\) 取模
+
+	\textbf{输入格式}
+
+	\textbf{本题输入含有多组数据}
+
+	第一行一个正整数 \(T\), 代表数据组数量.
+
+	接下来 \(T\) 行, 每行五个正整数, 分别代表 \(D,R,E,A,M\)
+
+	对于所有数据, \(1\le T\le2000\), \(1\le D,R,E,A,M\le5\times10^7\)
+
+	\textbf{输出格式}
+
+	输出 \(T\) 个正整数, 代表对应数据组答案
+
+	\textbf{样例输入}
+
+	\includecode[common]{hydroh1060.in}
+
+	\textbf{样例输出}
+
+	\includecode[common]{hydroh1060.ans}
+\end{frame}
+
+
+\begin{frame}{题解 (Part 1)}
+	化简后的式子为
+
+	\begin{equation}
+		\label{prime:eq:hydroh1060-1}
+		\sum_{(d,r,e,a,m)\in S}{\gcd}^6\{d,r,e,a,m\}
+	\end{equation}
+
+	其中 \(S=[1,D]\times[1,R]\times[1,E]\times[1,A]\times[1,M]\)
+\end{frame}

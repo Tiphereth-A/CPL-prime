@@ -1,0 +1,43 @@
+\begin{frame}[fragile]{定义}
+	\only<1->{\begin{definition}[最大公约数]
+			\label{prime:def:gcd}
+
+			对于两个\textbf{不全为零}的整数\(a,b\), 最大公约数即为\(a,b\)中最大的正公因数, 记作\((a,b)\), 或者\(\gcd(a,b)\)
+		\end{definition}}
+
+	\only<2->{\begin{definition}[最小公倍数]
+			\label{prime:def:lcm}
+
+			对于两个\textbf{不全为零}的整数\(a,b\), 最小公倍数即为\(a,b\)中最小的正公倍数, 记作\([a,b]\), 或者\(\lcm(a,b)\)
+		\end{definition}}
+\end{frame}
+
+
+\begin{frame}[fragile]{定义}
+	写成式子就是
+
+	\begin{equation}
+		\label{prime:eq:gcd}
+		(a,b):=\max\{d\in\Bbb{N}^*:d\mid a,d\mid b\}
+	\end{equation}
+
+	\begin{equation}
+		\label{prime:eq:lcm}
+		[a,b]:=\min\{d\in\Bbb{N}^*:a\mid d,b\mid d\}
+	\end{equation}
+\end{frame}
+
+
+\begin{frame}[fragile]{定义}
+	这一组概念自然可以推广到多个整数之间
+
+	\begin{equation}
+		\label{prime:eq:gcdn}
+		(a_1,a_2,\dots,a_n):=\max\{d\in\Bbb{N}^*:d\mid a_i,~i=1,2,\dots,n\}
+	\end{equation}
+
+	\begin{equation}
+		\label{prime:eq:lcmn}
+		[a_1,a_2,\dots,a_n]:=\min\{d\in\Bbb{N}^*:a_i\mid d,~i=1,2,\dots,n\}
+	\end{equation}
+\end{frame}

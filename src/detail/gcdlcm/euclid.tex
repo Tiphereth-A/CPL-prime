@@ -1,0 +1,39 @@
+\begin{frame}{辗转相除法 (Euclid 算法)}
+	\label{prime:algo:euclid}
+
+	\only<1->{求最小公倍数只需求出最大公约数即可}
+
+	\only<2->{而由于\((a,b)=(a,b+la),~\forall l\in\Bbb{Z}\), 我们可推出:
+
+		\begin{equation}
+			(a,b)=(b,a\bmod b),~\forall b\ne 0
+		\end{equation}}
+
+	\only<3->{之后我们便可递归计算, 当\(b=0\)时停止, 答案即为\(a\)}
+\end{frame}
+
+
+\begin{frame}[fragile]{实现}
+	\includecode[c++]{gcdlcm.cpp}
+\end{frame}
+
+
+\begin{frame}{时间复杂度}
+	\only<1->{我们知道, \(b\to a \bmod b\)这个过程中, \(b\)的值大致可认为是减半, 所以时间复杂度为\(O(\log n)\)
+		\footnote{在值域固定的情况下, 求最大公约数有\(O(1)\)算法, 此处略去}}
+
+	\only<2->{最坏情况为两相邻的 Fibonacci 数}
+
+	\only<3->{Fibonacci 数的定义如下:
+		\[
+			F_i:=\begin{cases}
+				i,               & i=0,1 \\
+				F_{i-1}+F_{i-2}, & i>1
+			\end{cases}
+		\]}
+
+	\only<4->{容易求得
+		\begin{equation}
+			F_n=\frac{\phi^n-(1-\phi)^n}{\sqrt 5},~\phi=\frac{1+\sqrt{5}}{2}
+		\end{equation}}
+\end{frame}

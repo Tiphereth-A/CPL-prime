@@ -1,0 +1,38 @@
+\begin{frame}[fragile]{整数集的重要性质}
+
+	\only<1->{接下来我们给出一个整数集的重要性质}
+
+	\only<2->{\begin{lemma}
+			\label{prime:lm:pre-bezout}
+
+			设\(S\)为非空整数集, 若\(S\)关于整数的加减法封闭
+			\footnote{若\(a,b\in S\), 则\(a\pm b\in S\)}
+			, 则存在唯一自然数\(d\)使得\(S=d\Bbb{Z}:=\{da:a\in\Bbb{Z}\}\)
+			\footnote{条件中隐含了一点: 若\(a\in S\), 则\(ac\in S,~\forall c\in\Bbb{Z}\)}
+			\footnote{一般的, 若 \(S\) 为主理想环, 则 \(\exists_1 d\in\Bbb{Z}~s.t.~S=\langle d\rangle\)}
+		\end{lemma}}
+\end{frame}
+
+\begin{frame}[fragile]{证明}
+	\only<1>{若\(S=\{0\}\), 则只能取\(d=0\)}
+
+	\only<2>{设\(0\ne a\in S\), 则\(0=a-a\in S,-a=(-1)\times a\in S\), 故此时\(S\)中必有正整数
+
+		由良序公理可知: \(S\)中的所有正整数中必有最小值}
+
+	\only<2->{令\(d\)为\(S\)中的最小正整数, 下证\(S=d\Bbb{Z}\)}
+
+	\only<3->{首先易得\(d\Bbb{Z}\subseteq S\)}
+
+	\only<4->{之后我们在\(S\)中任取整数\(a\)做带余除法
+
+		\begin{equation}
+			a=qd+r,~q\in\Bbb{Z},r\in[0,d)\cap\Bbb{N}
+		\end{equation}}
+
+	\only<5->{可知\(r=a-qd\in S\), 而\(d\)为\(S\)中的最小正整数, 故必有\(r=0\)
+
+		这表明\(a=qd\in d\Bbb{Z}\), 因此\(S\subseteq d\Bbb{Z}\)}
+
+	\only<6->{最后, 注意到\(d\)为\(S\)中的最小正整数, 则满足\(S=d\Bbb{Z}\)的\(d\)一定是唯一的}
+\end{frame}

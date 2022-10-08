@@ -1,0 +1,59 @@
+\begin{frame}{扩展 Euclid 算法}
+	\label{prime:algo:exgcd}
+
+	\only<1-5>{用于对给定的\(a,b,c\), 寻找不定方程\(ax+by=c\)的一组可行解}
+
+	\only<2-5>{首先, 由 B\'{e}zout 定理 (\ref{prime:th:bezout}), 若\((a,b)\nmid c\), 则该方程无解}
+
+	\only<3-5>{接下来, 令\(d=\frac{c}{(a,b)}\), 则求出\(ax+by=(a,b)\)的一组解\(x=x',y=y'\)后, 容易得知\(x=dx',y=dy'\)即为\(ax+by=c\)的一组解}
+
+	\only<4-5>{另外, 若\(ax+by=c\)有一组解\(x=x',y=y'\), 则
+
+		\[
+			\begin{cases}
+				x=x'-bt \\
+				y=y'+at
+			\end{cases}(t\in\Bbb{Z})
+		\]
+
+		也为该方程的解, 所以方程\(ax+by=c\)若有解, 则必有无数组解}
+
+	\only<5->{综上所述: 若能求出方程\(ax+by=(a,b)\)的一组解, 则我们就能得知方程\(ax+by=c\)解的情况}
+
+	\only<6-8>{考虑如下两式
+
+		\begin{equation}
+			ax+by=(a,b)
+		\end{equation}
+
+		\begin{equation}
+			bx'+(a\bmod b)y'=(b,a\bmod b)=(a,b)
+		\end{equation}}
+
+	\only<7-8>{注意到
+		\begin{equation}
+			a\bmod b=a-\left\lfloor\frac{a}{b}\right\rfloor b
+		\end{equation}}
+
+	\only<8-9>{故
+		\begin{equation}
+			ax+by=bx'+(a-\left\lfloor\frac{a}{b}\right\rfloor b)y'
+		\end{equation}}
+
+	\only<9->{进而
+		\[
+			\begin{cases}
+				x=y' \\
+				y=x'-\left\lfloor\frac{a}{b}\right\rfloor y'
+			\end{cases}
+		\]}
+
+	\only<10->{接下来不断向下迭代即可, 直到\(b=0\), 此时显然有\(x=1,y=0\)}
+
+	\only<11->{\textbf{时间复杂度} \(O(\log n)\)}
+\end{frame}
+
+
+\begin{frame}[fragile]{实现}
+	\includecode[c++]{exgcd.cpp}
+\end{frame}

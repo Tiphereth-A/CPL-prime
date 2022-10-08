@@ -1,0 +1,29 @@
+\begin{frame}[fragile]{带余除法}
+	\begin{theorem}[带余除法]
+		\label{prime:th:div-remaining}
+
+		设\(a,b\in\Bbb{Z}\), 且\(b\geqslant1\), 则存在唯一的整数\(q,r\)使得
+
+		\begin{equation}
+			a=qb+r,r\in[0,b)\cap\Bbb{N}
+		\end{equation}
+
+	\end{theorem}
+\end{frame}
+
+
+\begin{frame}[fragile]{证明}
+	\only<1->{首先, 取\(q=\lfloor\frac{a}{b}\rfloor\), \(r=a-qb\), 容易验证此时的\(q,r\)满足条件}
+
+	\only<2->{下证唯一性, 假设又有一组整数\(q',r'\)使得\(a=q'b-r',~r'\in[0,b)\cap\Bbb{N}\), 则
+
+	\begin{equation}
+		0=a-a=(q-q')b+(r-r')
+	\end{equation}}
+
+	\only<3->{因此\(b\mid r-r'\)}
+
+	\only<4->{而\(|r-r'|\in[0,b)\cap\Bbb{N}\), 故只能有\(r-r'=0\), 即\(r=r'\)}
+
+	\only<5->{此时\(a-qb=a-q'b\), 有\(q=q'\)}
+\end{frame}
