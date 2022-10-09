@@ -2,7 +2,7 @@
 
 ![GitHub](https://img.shields.io/github/license/Tiphereth-A/CPL-prime)
 
-My LaTeX lecture & slice about prime, powered by [metropolis](https://github.com/matze/mtheme)
+My LaTeX lecture & slice about prime & GCD, powered by [metropolis](https://github.com/matze/mtheme)
 
 ## Usage
 
